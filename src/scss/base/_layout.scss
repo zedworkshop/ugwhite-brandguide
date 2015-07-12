@@ -1,0 +1,28 @@
+.main {
+	margin-top: 3rem;
+}
+
+.content {
+	max-width: 64rem;
+	min-height: 3rem;
+	padding-bottom: 5%;
+
+	@media #{$breakpoint-lg} {
+		padding-left: 4rem;
+	}
+
+}
+
+.section-heading {
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@media #{$breakpoint-xl} {
+		padding-left: 10%;
+	}
+
+}

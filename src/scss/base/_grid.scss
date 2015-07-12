@@ -1,0 +1,61 @@
+@media #{$breakpoint-xl} {
+
+  .xl-col {
+    float: left;
+    box-sizing: border-box;
+  }
+
+  .xl-col-right {
+    float: right;
+    box-sizing: border-box;
+  }
+
+  .xl-col-1 {
+    width: (1/12 * 100%);
+  }
+
+  .xl-col-2 {
+    width: (2/12 * 100%);
+  }
+
+  .xl-col-3 {
+    width: (3/12 * 100%);
+  }
+
+  .xl-col-4 {
+    width: (4/12 * 100%);
+  }
+
+  .xl-col-5 {
+    width: (5/12 * 100%);
+  }
+
+  .xl-col-6 {
+    width: (6/12 * 100%);
+  }
+
+  .xl-col-7 {
+    width: (7/12 * 100%);
+  }
+
+  .xl-col-8 {
+    width: (8/12 * 100%);
+  }
+
+  .xl-col-9 {
+    width: (9/12 * 100%);
+  }
+
+  .xl-col-10 {
+    width: (10/12 * 100%);
+  }
+
+  .xl-col-11 {
+    width: (11/12 * 100%);
+  }
+
+  .xl-col-12 {
+    width: 100%;
+  }
+
+}

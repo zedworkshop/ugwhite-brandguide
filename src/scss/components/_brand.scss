@@ -1,0 +1,63 @@
+.UGW-logo {
+	min-width: 2in;
+	max-width: 40rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+	Background Colors
+*/
+
+.bg-forest {
+	background-color: $forest;
+
+	&-lighter { background-color: $forest-lighter; }
+	&-light {   background-color: $forest-light; }
+	&-dark {  	background-color: $forest-dark; }
+	&-darker { 	background-color: $forest-darker; }
+}
+
+.bg-cardinal {
+	background-color: $cardinal;
+
+	&-lighter { background-color: $cardinal-lighter; }
+	&-light {   background-color: $cardinal-light; }
+	&-dark {  	background-color: $cardinal-dark; }
+	&-darker { 	background-color: $cardinal-darker; }
+}
+
+.bg-sand {
+	background-color: $sand;
+
+	&-lighter { background-color: $sand-lighter; }
+	&-light {   background-color: $sand-light; }
+	&-dark {  	background-color: $sand-dark; }
+	&-darker { 	background-color: $sand-darker; }
+}
+
+.bg-alt-1 { background-color: $alt-1; }
+.bg-alt-2 { background-color: $alt-2; }
+.bg-alt-3 { background-color: $alt-3; }
+.bg-alt-4 { background-color: $alt-4; }
+.bg-alt-5 { background-color: $alt-5; }
+.bg-alt-6 { background-color: $alt-6; }
+.bg-alt-7 { background-color: $alt-7; }
+.bg-alt-8 { background-color: $alt-8; }
+
+
+/*
+	Colors
+*/
+
+.cardinal {
+	color: $cardinal;
+}
+
+.cardinal-darker {
+	color: $cardinal-darker;
+}
+
+.sand-darker {
+	color: $sand-darker;
+}

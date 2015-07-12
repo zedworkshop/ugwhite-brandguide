@@ -1,0 +1,54 @@
+body {
+	color: #333;
+}
+
+body, h1,h2,h3,h4,h5,h6,p,ul,ol {
+	font-family: $sans-serif;
+}
+
+h1 {
+	@media #{$breakpoint-md} {
+		font-size: 2.8rem;
+	}
+
+	@media #{$breakpoint-md} {
+		font-size: 3.5rem;
+		font-size: 5vw;
+	}
+
+	@media #{$breakpoint-xl} {
+		font-size: 5rem;
+	}
+}
+
+h2 {
+	@media #{$breakpoint-xl} {
+		font-size: 2rem;
+	}
+}
+
+p {
+	font-size: 0.9rem;
+}
+
+/*
+	Styles
+*/
+
+.hairline {
+	font-weight: 100;
+}
+
+.thin {
+	font-weight: 300;
+}
+
+.small {
+	font-size: 0.8rem;
+}
+
+.xsmall {
+	font-size: 0.7rem;
+}
+
+

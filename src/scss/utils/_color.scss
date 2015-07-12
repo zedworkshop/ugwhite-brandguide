@@ -1,0 +1,32 @@
+// Primary colors
+
+$forest: #4A7628;
+$forest-lighter: tint($forest, 66);
+$forest-light: lighten($forest, 5);
+$forest-dark: darken($forest, 5);
+$forest-darker: shade($forest, 50);
+
+$cardinal: #CF0A2C;
+$cardinal-lighter: tint($cardinal, 60);
+$cardinal-light: lighten($cardinal, 5);
+$cardinal-dark: darken($cardinal, 5);
+$cardinal-darker: shade($cardinal, 50);
+
+$sand: #F3E4B2;
+$sand-lighter: tint($sand, 33);
+$sand-light: tint($sand, 66);
+$sand-dark: shade($sand, 85);
+$sand-darker: shade($sand, 66);
+
+$tint: #f4f4f4;
+
+// Alt colors
+
+$alt-1: #7A232E;
+$alt-2: #F6B221;
+$alt-3: #002B49;
+$alt-4: #706259;
+$alt-5: #B83D24;
+$alt-6: #4F4A33;
+$alt-7: #D99A29;
+$alt-8: #513628;

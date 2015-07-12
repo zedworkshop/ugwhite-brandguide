@@ -1,0 +1,19 @@
+.sitenav {
+	height: 3rem;
+	width: 100%;
+	overflow-x: auto;
+	white-space: nowrap;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	.btn {
+		border: none;
+		box-shadow: none;
+
+		&:active {
+			color: $cardinal-darker;
+		}
+	}
+}
