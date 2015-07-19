@@ -18,9 +18,9 @@ var paths = {
 };
 
 // load options
-var bumpType = $.util.env.type || 'patch';
+var bumpType = $.util.env.bump || 'patch';
 
-gulp.task('styles', function () {
+gulp.task('styles', function() {
     $.util.log('Rebuilding application styles');
 
     return gulp.src(paths.dev + '/scss/*.scss')
@@ -32,16 +32,22 @@ gulp.task('styles', function () {
             errLogToConsole: true,
             onError: browserSync.notify
         }))
-        .pipe($.autoprefixer(['last 5 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
+        .pipe($.autoprefixer(['last 5 versions', '> 1%', 'ie 8', 'ie 7'], {
+            cascade: true
+        }))
         .pipe($.pixrem())
         .pipe(gulp.dest(paths.dev + '/css'))
-        .pipe($.size({showFiles: true}))
+        .pipe($.size({
+            showFiles: true
+        }))
         .pipe($.filter('**/*.css'))
-        .pipe(reload({stream: true}))
+        .pipe(reload({
+            stream: true
+        }))
         .pipe($.notify('CSS compiled and autoprefixed'));
 });
 
-gulp.task('scripts', function () {
+gulp.task('scripts', function() {
     return gulp.src(paths.dev + '/scripts/**/*.js')
         .pipe($.jshint())
         .pipe($.jshint.reporter(require('jshint-stylish')))
@@ -50,15 +56,17 @@ gulp.task('scripts', function () {
         .pipe($.notify('JS hinted'));
 });
 
-gulp.task('html', ['styles'], function () {
-    var jsFilter = $.filter('js/*.js');
-    var cssFilter = $.filter('css/*.css');
+gulp.task('html', ['styles'], function() {
+    var jsFilter = $.filter(paths.dev + '/js/*.js');
+    var cssFilter = $.filter(paths.dev + '/css/*.css');
     var assets = $.useref.assets();
 
-    return gulp.src(paths.dev + '/build.html')
+    return gulp.src(paths.dev + '/index.html')
         .pipe(assets)
         .pipe(jsFilter)
-        .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
+        .pipe($.uglify({
+            preserveComments: $.uglifySaveLicense
+        }))
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
         .pipe($.csso())
@@ -70,7 +78,7 @@ gulp.task('html', ['styles'], function () {
         .pipe($.notify('CSS and JS concatted and minified'));
 });
 
-gulp.task('images', function () {
+gulp.task('images', function() {
     return gulp.src(paths.dev + '/img/**/*')
         .pipe($.cache($.imagemin({
             optimizationLevel: 3,
@@ -82,7 +90,7 @@ gulp.task('images', function () {
         .pipe($.notify('Images minified'));
 });
 
-gulp.task('fonts', function () {
+gulp.task('fonts', function() {
     return gulp.src($.mainBowerFiles())
         .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
         .pipe($.flatten())
@@ -90,7 +98,14 @@ gulp.task('fonts', function () {
         .pipe($.size());
 });
 
-gulp.task('serve', function () {
+gulp.task('copy', function() {
+    gulp.src([
+            paths.dev + '/favicon.ico'
+        ])
+        .pipe(gulp.dest(paths.build));
+});
+
+gulp.task('serve', function() {
     browserSync({
         server: {
             baseDir: paths.dev
@@ -98,23 +113,22 @@ gulp.task('serve', function () {
     });
 });
 
-gulp.task('watch', ['styles', 'serve'], function () {
+gulp.task('watch', ['styles', 'serve'], function() {
 
     // watch for changes to reload
     gulp.watch([
         paths.dev + '/*.html',
-        paths.dev + '/scripts/**/*.js',
-        paths.dev + '/images/**/*'
+        paths.dev + '/img/**/*'
     ], {}, reload);
 
     // watch to run tasks
     gulp.watch(paths.dev + '/scss/**/*', ['styles']);
 });
 
-gulp.task('build', ['html', 'images', 'fonts']);
+gulp.task('build', ['html', 'images', 'fonts', 'copy', 'bump']);
 
-gulp.task('bower', function () {
-    gulp.src(paths.dev + '/build.html')
+gulp.task('bower', function() {
+    gulp.src(paths.dev + '/index.html')
         .pipe(wiredep({
             exclude: [
 
@@ -124,8 +138,10 @@ gulp.task('bower', function () {
 });
 
 // Update bower, component, npm at once:
-gulp.task('bump', function(){
+gulp.task('bump', function() {
     gulp.src(['./bower.json', './package.json'])
-        .pipe($.bump({ type: bumpType }))
+        .pipe($.bump({
+            type: bumpType
+        }))
         .pipe(gulp.dest('./'));
 });
