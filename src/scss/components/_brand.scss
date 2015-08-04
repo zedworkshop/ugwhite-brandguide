@@ -18,13 +18,13 @@
 	&-darker { 	background-color: $forest-darker; }
 }
 
-.bg-cardinal {
-	background-color: $cardinal;
+.bg-rust {
+	background-color: $rust;
 
-	&-lighter { background-color: $cardinal-lighter; }
-	&-light {   background-color: $cardinal-light; }
-	&-dark {  	background-color: $cardinal-dark; }
-	&-darker { 	background-color: $cardinal-darker; }
+	&-lighter { background-color: $rust-lighter; }
+	&-light {   background-color: $rust-light; }
+	&-dark {  	background-color: $rust-dark; }
+	&-darker { 	background-color: $rust-darker; }
 }
 
 .bg-sand {
@@ -50,12 +50,12 @@
 	Colors
 */
 
-.cardinal {
-	color: $cardinal;
+.rust {
+	color: $rust;
 }
 
-.cardinal-darker {
-	color: $cardinal-darker;
+.rust-darker {
+	color: $rust-darker;
 }
 
 .sand-darker {
